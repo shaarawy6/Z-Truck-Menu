@@ -8,18 +8,44 @@
   margin: 0;
 }
 
-.html {
-  font-size: 62.5%;
+a {
+  text-decoration: none;
+}
+
+html {
+  height: -webkit-fill-available;
 }
 
 body {
-  font-family: "Poppins", sans-serif;
+  font-family: "Montserrat", sans-serif;
+  height: -webkit-fill-available;
+}
+
+:root {
+  --primary-color: #f1faff;
+  --text-dark: #030712;
+  --text-light: white;
+  --extra-light: #fbfbfb;
+  --white: #ffffff;
+  --max-width: 1200px;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
 }
 
 .container {
   max-width: 1200px;
   width: 90%;
   margin: auto;
+}
+
+hr {
+  margin-left: -5rem;
+  color: #5555557b;
+  width: 100%;
 }
 
 .navbar input[type="checkbox"],
@@ -59,13 +85,13 @@ body {
 
 .menu-items a {
   text-decoration: none;
-  color: #444;
+  color: #646464;
   font-weight: 500;
   transition: color 0.3s ease-in-out;
 }
 
 .menu-items a:hover {
-  color: #117964;
+  color: #e16213;
   transition: color 0.3s ease-in-out;
 }
 
@@ -90,13 +116,17 @@ body {
   text-align: center;
   font-size: 3.4rem;
   font-weight: 400;
-  color: #666;
+  color: #d25a0f;
+  text-transform: uppercase;
+  font-family:  'Freckle Face', cursive;
 }
 
 .food-menu-container {
-  display: flex;
-  flex-wrap: wrap;
-  padding: 50px 0px 30px 0px;
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  gap: 1rem;
+  margin-top: 4rem;
+  margin-left: 15rem;
 }
 
 .food-menu-container img {
@@ -109,8 +139,8 @@ body {
 }
 
 .food-menu-item {
-  display: flex;
-  flex: 1 1 600px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
   justify-content: space-evenly;
   margin-bottom: 3rem;
 }
@@ -119,30 +149,156 @@ body {
   margin: auto 1.5rem;
 }
 
-.font-title {
-  font-size: 1.8rem;
-  font-weight: 400;
+.food-title {
+  font-size: 1.8rem !important;
+  font-weight: 700;
+  width: 100%;
+  margin-left: -12rem;
   color: #444;
+  text-transform: capitalize;
+  font-family:  'Freckle Face', cursive;
 }
 
 .food-description p {
-  font-size: 1.4rem;
+  font-size: 1.4rem !important;
   color: #555;
-  font-weight: 500;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  line-height: 2rem !important;
+  width: 100%;
+  line-height: 18px;
+  margin-top: 2rem;
+  margin-left: -12rem;
 }
 
 .food-description .food-price {
-  color: #117964;
+  color: #e16213bc;
   font-weight: 700;
 }
 
-#footer h2 {
+.footer__container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
   text-align: center;
-  font-size: 1.8rem;
-  padding: 2.6rem;
+}
+
+.footer__heading {
+  color: var(--text-light);
+  font-size: 2rem;
+  font-weight: 600;
+  padding-bottom: 1rem;
+  margin-bottom: 2rem;
+  position: relative;
+  text-align: center;
+}
+
+.footer__heading::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 2px;
+  width: 90px;
+  background-color: var(--text-light);
+  left: 40%;
+}
+
+.footer__col p {
+  font-size: 1.2rem;
   font-weight: 500;
-  color: #fff;
-  background: rgb(65, 65, 65);
+  margin-bottom: 1rem;
+  color: var(--text-light);
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.footer__col p:hover {
+  color: var(--text-dark);
+}
+
+.footer__col p i {
+  font-size: 1rem;
+  margin-right: 0.5rem;
+}
+
+.footer__bar {
+  width: 100%;
+  margin: auto;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  background-color: #d25a0f;
+  align-items: center;
+  gap: 2rem;
+}
+
+.footer__bar h2 {
+  text-align: center;
+}
+
+.copyright {
+  font-size: 1rem;
+  font-weight: 500;
+  margin: auto;
+  width: 100%;
+  color: var(--text-light);
+  text-align: center;
+  background-color: #d25a0f;
+  border: none;
+  padding-top: -3rem;
+  padding-bottom: 2rem;
+}
+
+.location {
+  font-size: 1rem;
+  font-weight: 500;
+  margin: auto;
+  width: 100%;
+  color: var(--text-light);
+  text-align: center;
+  background-color: #d25a0f;
+  border: none;
+  padding-top: 4rem;
+  padding-bottom: -2rem;
+}
+
+.footer__form {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.footer__form form {
+  width: 100%;
+  max-width: 400px;
+  display: flex;
+  align-items: center;
+}
+
+.footer__form .form-input {
+  width: 100%;
+  margin-top: 1px;
+  padding: 0.75rem 1rem;
+  outline: none;
+  border: none;
+  border-radius: 0px !important;
+  border-bottom: 1px solid var(--text-dark);
+  font-size: 0.8rem;
+}
+
+.footer__form .sub-btn {
+  background-color: var(--text-dark);
+  color: var(--white);
+}
+
+footer a {
+  color: #6b7280;
+}
+
+footer i {
+  margin-right: 1rem;
+  color: white;
+  font-size: 2rem;
 }
 
 @media (max-width: 768px) {
@@ -253,6 +409,11 @@ body {
   .img-container {
     margin: 0;
   }
+
+  .food-menu-container img {
+    width: 120px;
+    height: 120px;
+  }
 }
 @media (max-width: 500px) {
     html {
@@ -265,15 +426,28 @@ body {
   
     .food-menu-container img {
       margin: auto;
-    }
-  
-    .food-menu-item {
-      flex-direction: column;
-      text-align: center;
+      width: 140px;
+      height: 140px;
+      margin-left: 4rem;
     }
   
     .form-container {
       width: 90%;
+    }
+
+    hr {
+      margin-left: 3.5rem;
+    }
+
+    .food-menu-item {
+        opacity: 0;
+        transform: translateX(-100px);
+        transition: opacity 2s ease, transform 1s ease;
+    }
+
+    .food-menu-item.visible {
+        opacity: 1;
+        transform: translateX(0);
     }
 
     .navbar {
@@ -298,6 +472,69 @@ body {
       margin-bottom: 2.5rem;
       font-size: 1.8rem;
       font-weight: 500;
+    }
+    
+    .food-menu-container {
+      display: grid;
+      grid-template-columns: repeat(1, 1fr);
+      gap: 1rem;
+      margin-top: 5rem;
+      margin-left: -2rem;
+    }
+    
+    .food-menu-item {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      justify-content: space-evenly;
+      margin-bottom: 1.5rem;
+      margin-top: 1rem;
+    }
+    
+    .food-description {
+      margin: auto 1.5rem;
+      margin-left: 2rem;
+    }
+    
+    .food-title {
+      font-size: 1.4rem;
+      font-weight: 900;
+      width: 145%;
+      margin-left: -1rem;
+      margin-bottom: 1rem;
+      color: #444;
+    }
+    
+    .food-description p {
+      font-size: 1.1rem;
+      color: #555;
+      font-weight: 500;
+      width: 138%;
+      margin-left: -1rem;
+    }
+    
+    .food-description .food-price {
+      font-size: 1.5rem;
+      font-weight: 900;
+      margin-top: 1rem;
+      width: 50%;
+      text-align: center;
+      border: 1px solid #e16213;
+      padding-top: 5px;
+      padding-bottom: 5px;
+      border-radius: 15px;
+    }
+
+    .footer__heading {
+      text-align: center;
+      color: white;
+    }
+
+    .footer__heading::after {
+      left: 25%;
+    }
+
+    .footer__col h4 {
+      color: white;
     }
   }
   
